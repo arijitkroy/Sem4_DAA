@@ -10,8 +10,8 @@ void swap(int* a, int* b) {
 
 void bubbleSort(int n) {
     int i, j;
-    for (i = 1; i <= n; i++) {
-        for (j = 1; j <= n; j++) {
+    for (i = 1; i <= n - 1; i++) {
+        for (j = 1; j <= n - i - 1; j++) {
             if (p[j+1] > p[j]) {
                 swap(&p[j], &p[j+1]);
                 swap(&id[j], &id[j+1]);
@@ -26,7 +26,7 @@ int jS(int n) {
     int i, c = 0, k, d_max = d[0], total_profit = 0;
     for (i = 1; i < n; i++) if (d[i] > d_max) d_max = d[i];
     for (i = 0; i < d_max; i++) s[i] = -1;
-    for (i = 0; i < n; i++) {
+    for (i = 1; i <= n; i++) {
         k = d[i] - 1;
         while (k >= 0) {
             if (s[k] == -1) {
