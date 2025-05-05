@@ -9,7 +9,7 @@ int MCO() {
         for (i = 1; i <= n - l + 1; i++) {
             j = i + l - 1;
             m[i][j] = INF;
-            for (k = i; k <= j - 1; k++) {
+            for (k = i; k < j; k++) {
                 q = m[i][k] + m[k+1][j] + p[i-1]*p[k]*p[j];
                 if (q < m[i][j]) {
                     m[i][j] = q;
